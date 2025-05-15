@@ -1,4 +1,0 @@
-cd C:\WAGERWARS API DISCORD BOT
-git init
-git add .
-git commit -m "Initial commit of WagerWars API"
