@@ -1,0 +1,859 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "WagerWars Bot API",
+    "version": "1.0.0",
+    "description": "OpenAPI 3.0 specification for all 30 WagerWars Discord bot slash commands."
+  },
+  "paths": {
+    "/start": {
+      "post": {
+        "summary": "Challenge a player to a wager",
+        "operationId": "start",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "interaction": {
+                    "type": "string"
+                  },
+                  "target": {
+                    "type": "string"
+                  },
+                  "amount": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful execution"
+          }
+        }
+      }
+    },
+    "/claim": {
+      "post": {
+        "summary": "Claim you won a wager",
+        "operationId": "claim",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "interaction": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful execution"
+          }
+        }
+      }
+    },
+    "/blacklist": {
+      "post": {
+        "summary": "Blacklist a user from wagering",
+        "operationId": "blacklist",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "interaction": {
+                    "type": "string"
+                  },
+                  "user": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful execution"
+          }
+        }
+      }
+    },
+    "/history": {
+      "post": {
+        "summary": "Show recent wagers",
+        "operationId": "history",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "interaction": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful execution"
+          }
+        }
+      }
+    },
+    "/leaderboard": {
+      "post": {
+        "summary": "Show top 10 wager winners",
+        "operationId": "leaderboard",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "interaction": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful execution"
+          }
+        }
+      }
+    },
+    "/set_announcement_channel": {
+      "post": {
+        "summary": "Set the channel for wager announcements",
+        "operationId": "set_announcement_channel",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "interaction": {
+                    "type": "string"
+                  },
+                  "channel": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful execution"
+          }
+        }
+      }
+    },
+    "/set_status": {
+      "post": {
+        "summary": "Change the bot's Discord status",
+        "operationId": "set_status",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "interaction": {
+                    "type": "string"
+                  },
+                  "status_type": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful execution"
+          }
+        }
+      }
+    },
+    "/set_limits": {
+      "post": {
+        "summary": "Set the min and max bet limits",
+        "operationId": "set_limits",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "interaction": {
+                    "type": "string"
+                  },
+                  "min_bet": {
+                    "type": "string"
+                  },
+                  "max_bet": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful execution"
+          }
+        }
+      }
+    },
+    "/cooldown": {
+      "post": {
+        "summary": "cooldown command",
+        "operationId": "cooldown",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "interaction": {
+                    "type": "string"
+                  },
+                  "user": {
+                    "type": "string"
+                  },
+                  "seconds": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful execution"
+          }
+        }
+      }
+    },
+    "/remove_blacklist": {
+      "post": {
+        "summary": "Remove a user from the blacklist",
+        "operationId": "remove_blacklist",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "interaction": {
+                    "type": "string"
+                  },
+                  "user": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful execution"
+          }
+        }
+      }
+    },
+    "/wager_stats": {
+      "post": {
+        "summary": "View your wager statistics",
+        "operationId": "wager_stats",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "interaction": {
+                    "type": "string"
+                  },
+                  "user": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful execution"
+          }
+        }
+      }
+    },
+    "/reset_stats": {
+      "post": {
+        "summary": "Reset a user's wager statistics",
+        "operationId": "reset_stats",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "interaction": {
+                    "type": "string"
+                  },
+                  "user": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful execution"
+          }
+        }
+      }
+    },
+    "/admin_broadcast": {
+      "post": {
+        "summary": "Send a message to the announcement channel",
+        "operationId": "admin_broadcast",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "interaction": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful execution"
+          }
+        }
+      }
+    },
+    "/cancel": {
+      "post": {
+        "summary": "Cancel your pending wager request",
+        "operationId": "cancel",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "interaction": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful execution"
+          }
+        }
+      }
+    },
+    "/resolve": {
+      "post": {
+        "summary": "Manually resolve a wager dispute",
+        "operationId": "resolve",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "interaction": {
+                    "type": "string"
+                  },
+                  "winner": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful execution"
+          }
+        }
+      }
+    },
+    "/cooldown_check": {
+      "post": {
+        "summary": "Check your cooldown time",
+        "operationId": "cooldown_check",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "interaction": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful execution"
+          }
+        }
+      }
+    },
+    "/wager_analytics": {
+      "post": {
+        "summary": "Show bot-wide wager statistics",
+        "operationId": "wager_analytics",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "interaction": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful execution"
+          }
+        }
+      }
+    },
+    "/pot": {
+      "post": {
+        "summary": "Contribute scrap to the public wager pot",
+        "operationId": "pot",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "interaction": {
+                    "type": "string"
+                  },
+                  "amount": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful execution"
+          }
+        }
+      }
+    },
+    "/draw_pot": {
+      "post": {
+        "summary": "Draw a random winner from the public pot",
+        "operationId": "draw_pot",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "interaction": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful execution"
+          }
+        }
+      }
+    },
+    "/team_start": {
+      "post": {
+        "summary": "team_start command",
+        "operationId": "team_start",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "interaction": {
+                    "type": "string"
+                  },
+                  "ally": {
+                    "type": "string"
+                  },
+                  "enemy1": {
+                    "type": "string"
+                  },
+                  "enemy2": {
+                    "type": "string"
+                  },
+                  "amount": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful execution"
+          }
+        }
+      }
+    },
+    "/team_claim": {
+      "post": {
+        "summary": "Claim win for a team wager",
+        "operationId": "team_claim",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "interaction": {
+                    "type": "string"
+                  },
+                  "teammate": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful execution"
+          }
+        }
+      }
+    },
+    "/backup": {
+      "post": {
+        "summary": "Backup wager data to file",
+        "operationId": "backup",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "interaction": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful execution"
+          }
+        }
+      }
+    },
+    "/reload": {
+      "post": {
+        "summary": "Reload slash commands",
+        "operationId": "reload",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "interaction": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful execution"
+          }
+        }
+      }
+    },
+    "/help": {
+      "post": {
+        "summary": "Display available commands",
+        "operationId": "help_command",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "interaction": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful execution"
+          }
+        }
+      }
+    },
+    "/wager_list": {
+      "post": {
+        "summary": "List all current active wagers",
+        "operationId": "wager_list",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "interaction": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful execution"
+          }
+        }
+      }
+    },
+    "/wager_end": {
+      "post": {
+        "summary": "End a user's active wager",
+        "operationId": "wager_end",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "interaction": {
+                    "type": "string"
+                  },
+                  "user": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful execution"
+          }
+        }
+      }
+    },
+    "/pot_start": {
+      "post": {
+        "summary": "Start a public wager pot",
+        "operationId": "pot_start",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "interaction": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful execution"
+          }
+        }
+      }
+    },
+    "/pot_join": {
+      "post": {
+        "summary": "Join the public wager pot",
+        "operationId": "pot_join",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "interaction": {
+                    "type": "string"
+                  },
+                  "amount": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful execution"
+          }
+        }
+      }
+    },
+    "/pot_roll": {
+      "post": {
+        "summary": "Roll and declare the winner of the pot",
+        "operationId": "pot_roll",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "interaction": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful execution"
+          }
+        }
+      }
+    },
+    "/stats_global": {
+      "post": {
+        "summary": "View the top global wager stats",
+        "operationId": "stats_global",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "interaction": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful execution"
+          }
+        }
+      }
+    }
+  }
+}
